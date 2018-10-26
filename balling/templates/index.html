@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+{% if habari %}
+{{habari}}
+{% else %}
+	<div class='chat'  id="live-chat">
+		
+		<header class="clearfix">
+			
+			<a id='tog' class="chat-close">x</a>
+
+			<h4>{{request.user.username}}</h4>
+
+			<span class="chat-message-counter">3</span>
+
+		</header>
+
+
+		<div id="chat-history" class="chat">
+            {% for message in messages %}
+			
+                {% if message.user.id == request.user.id %}
+        <div  class="chat-history">
+				<div  class="chat-message clearfix">
+					<div class="chat-message-content clearfix">
+						
+						<span class="chat-time">{{message.date|timesince}}</span>
+
+						
+						<p style="width:20px;">{{message.message}}</p>
+
+					</div> <!-- end chat-message-content -->
+
+				</div> <!-- end chat-message -->
+                <br>
+                <hr>
+                {% else %}
+				<div  class="chat-message clearfix">
+					
+                        {% if message.user.profile.dp %}
+                        <img style="float:left" src="{{message.user.profile.dp.url}}" alt="" width="32" height="32">
+                        {% else %}
+                        <img style="float:left" src="http://www.digitalvertigo.co.uk/forum/uploads//monthly_05_2016/post-3489-0-19929300-1462982286.jpg" alt="" width="32" height="32">
+                        {% endif %}
+					<div class="chat-message-content clearfix">
+                           
+						
+						<span class="chat-time">{{message.date|timesince}}</span>
+
+						<h5>{{message.user.username}}</h5>
+
+						<p style="width:20px;">{{message.message}}</p>
+					</div> <!-- end chat-message-content -->
+
+				</div> <!-- end chat-message -->
+
+                <hr>
+                <br>
+            </div>
+        </div>
+                {% endif %}
+            {% endfor %}
+			<p class="chat-feedback">{{request.user.username}} is typing…</p>
+
+			<form action="/" method="POST">
+
+				<fieldset>
+					
+					  {%csrf_token%}
+              
+					{% bootstrap_form form %}
+
+				</fieldset>
+
+			</form>
+
+		</div> <!-- end chat -->
+
+    
+	<script>
+$(document).ready(function(){
+    $("#tog").click(function(){
+        $(".chat").toggle();
+    });
+});
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+[2018-10-24 11:17:03.445] [renderer1] [info] no standard startup: not just one text editor
+[2018-10-24 17:17:22.305] [renderer1] [error] Cannot read property 'start' of undefined: TypeError: Cannot read property 'start' of undefined
+	at Object.t.isStyleAttribute (/usr/share/code/resources/app/extensions/emmet/dist/extension.js:1:9804)
+	at t.DefaultCompletionItemProvider.provideCompletionItemsInternal (/usr/share/code/resources/app/extensions/emmet/dist/extension.js:1:46067)
+	at t.DefaultCompletionItemProvider.provideCompletionItems (/usr/share/code/resources/app/extensions/emmet/dist/extension.js:1:44984)
+	at /usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:506:740
+	at /usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:108:368
+	at new n.Class.derive._oncancel (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:85:776)
+	at Object.t.asThenable (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:108:333)
+	at e.provideCompletionItems (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:506:699)
+	at /usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:518:854
+	at e._withAdapter (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:512:91)
+	at e.$provideCompletionItems (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:518:816)
+	at t._doInvokeHandler (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:640:888)
+	at t._invokeHandler (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:640:554)
+	at t._receiveRequest (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:639:60)
+	at t._receiveOneMessage (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:638:59)
+	at /usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:635:926
+	at /usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:98:138
+	at e.fire (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:99:496)
+	at a (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:154:213)
+	at Socket._socketDataListener (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:154:432)
+	at emitOne (events.js:116:13)
+	at Socket.emit (events.js:211:7)
+	at addChunk (_stream_readable.js:263:12)
+	at readableAddChunk (_stream_readable.js:250:11)
+	at Socket.Readable.push (_stream_readable.js:208:10)
+	at Pipe.onread (net.js:594:20)
